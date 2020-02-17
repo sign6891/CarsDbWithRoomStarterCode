@@ -1,10 +1,22 @@
-package Model;
+package com.android.uraall.carsdbwithroomstartercode.Model;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "cars")
 public class Car {
+
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "car_id")
     private long id;
+    @ColumnInfo(name = "car_name")
     private String name;
+    @ColumnInfo(name = "car_price")
     private String price;
 
+    @Ignore
     public Car() {
     }
 
@@ -13,7 +25,7 @@ public class Car {
         this.name = name;
         this.price = price;
     }
-
+    @Ignore
     public Car(String name, String price) {
         this.name = name;
         this.price = price;
